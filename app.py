@@ -2,7 +2,7 @@ import os
 import random
 from flask import Flask, flash, redirect, render_template, request, url_for
 
-# pylint: disable=C0103
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -33,7 +33,7 @@ def success():
   height=request.form["tool"]
   vazn = request.form["arz"]
   num=random.randint(1,12)
-  return render_template('success.html', hit=height , number=num , vazn=vazn message=message , version = version) 
+  return render_template('success.html', hit=height , number=num , vazn=vazn  , message=message , version = version) 
  
 @app.route('/resultst')
 def resultst():
