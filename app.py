@@ -1,4 +1,4 @@
-import os
+import os, requests
 import random
 from flask import Flask, flash, redirect, render_template, request, url_for
 
@@ -44,4 +44,4 @@ def resultst():
 
 if __name__ == '__main__':
     server_port = os.environ.get('PORT', '80')
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
