@@ -1,8 +1,10 @@
+# Specify filepatterns you want git to ignore.
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+#bash scripts
+*sh
 # C extensions
 *.so
 
@@ -124,8 +126,13 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
+# templates/page-dish.html
+templates/page-dish.html
 # Pyre type checker
 .pyre/
-*.log
-.githubconfig
+
+*.xlsx
+*.db
+*.db3
+*.txt
+*.exe
