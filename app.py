@@ -36,12 +36,11 @@ def success():
   num=random.randint(1,12)
   return render_template('success.html', hit=height , number=num , vazn=vazn)
  
-@app.route('/resultst')
+@app.route("/resultst")
 def resultst():
-	num=random.randint(1,12)
-	return render_template('resultst.html', number=num)
+    numberr = random.randint(20,50)
+    return render_template('results.html', numberr = numberr)
 
 
 if __name__ == '__main__':
-    server_port = os.environ.get('PORT', '80')
     app.run(debug=True)
