@@ -137,3 +137,6 @@ templates/page-dish.html
 *.txt
 *.exe
 *.swp
+private key.txt
+Procfile
+svc_deployment.yml
