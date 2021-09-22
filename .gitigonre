@@ -142,3 +142,4 @@ Procfile
 svc_deployment.yml
 .fandogh/
 .theia/
+.gitignore.swp 
