@@ -140,3 +140,5 @@ templates/page-dish.html
 private key.txt
 Procfile
 svc_deployment.yml
+.fandogh/
+.theia/
