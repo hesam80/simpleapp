@@ -1,21 +1,31 @@
-# Python image to use.
-FROM python:3.9
-# copy the requirements file used for dependencies
-COPY ./requirements.txt  /app/requirements.txt
+# python runtime
 
-# Set the working directory to /app
+FROM python:3.6.5-alpine
+
+ 
+
+# working directory
+
 WORKDIR /app
 
+ 
 
+# copy current directory into the container
 
-# Install any needed packages specified in requirements.txt
+ADD . /app
 
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
-RUN pip install gunicorn
-# Copy the rest of the working directory contents into the container at /app
-COPY .  /app
+ 
 
-CMD ["sh" , "docker-entry.sh"]
+# install requirements
 
-# Run app.py when the container launches
+RUN pip3 install -r src/requirements.txt
 
+ 
+
+# make port 8000 available to the world outside
+
+EXPOSE 8000
+
+ 
+
+CMD ["gunicorn", "--config", "./conf/gunicorn_conf.py", "src:app"]
