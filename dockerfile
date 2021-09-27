@@ -1,5 +1,6 @@
 # Python image to use.
-FROM python:3.9
+FROM python:3.6.5-alpine
+#  FROM python:3.9
 # copy the requirements file used for dependencies
 COPY ./requirements.txt  /app/requirements.txt
 
