@@ -7,11 +7,11 @@ COPY ./requirements.txt  /app/requirements.txt
 # Set the working directory to /app
 WORKDIR /app
 
-
+RUN apk update && apk upgrade && apk add bash
 
 # Install any needed packages specified in requirements.txt
-
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 RUN pip install gunicorn
 # Copy the rest of the working directory contents into the container at /app
 COPY .  /app
