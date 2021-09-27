@@ -16,10 +16,8 @@ def view():
     revision = os.environ.get('K_REVISION', 'Unknown revision')
     num=random.randint(1,12)
     hitt= num*2
-    return render_template('index.html',num=num,hit=hitt,congmsg=congramessage,
-        message=message,
-        Service=service,
-        Revision=revision)
+    return render_template('index.html',num=num,hit=hitt,congmsg=congramessage,Service=service,Revision=revision,message=message)
+
 
 @app.route("/indexx")
 def indexx():
@@ -44,4 +42,4 @@ def resultst():
 
 if __name__ == '__main__':
     server_port = os.environ.get('PORT', '80')
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True)

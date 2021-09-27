@@ -1,0 +1,23 @@
+push:  
+    stage: push  
+    image: docker:latest  
+    services:  
+        - docker:dind  
+    script:  
+        - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY  
+        - docker build --pull -t $IMAGE_URL:$TAG .  
+        - docker push $IMAGE_URL:$TAG  
+  only:  
+        - develop
+
+deploy:  
+    stage: deploy  
+    image: python:3.5  
+    variables:  
+        COLLECT_ERROR: 1  
+    script:  
+        - pip install fandogh_cli --upgrade  
+        - fandogh login --username $FAN_USR --password $FAN_PASS  
+        - ./deployment/scripts/deploy-to-fandogh.sh 
+    only:  
+  - develop
