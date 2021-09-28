@@ -1,1 +1,16 @@
+branches:
+  only:
+  - master
 language: python
+cache: yarn
+python:
+  - "3.5"
+# command to install dependencies
+install:
+  - pip install fandogh-cli --upgrade
+# command to run tests
+script:
+  - echo $TRAVIS_COMMIT
+  - fandogh login --username=$FANDOGH_USERNAME --password=$FANDOGH_PASSWORD
+  - fandogh image publish --version=$TRAVIS_COMMIT || travis_terminate 1
+  - fandogh service deploy -p 8000 --version=$TRAVIS_COMMIT --name=simpleapp -e RECAPTCHA_SITE_KEY=$RECAPTCHA_SITE_KEY -e RECAPTCHA_SECRET_KEY=$RECAPTCHA_SECRET_KEY  -e SECRET_KEY=$SECRET_KEY || travis_terminate 1
