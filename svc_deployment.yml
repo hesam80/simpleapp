@@ -1,5 +1,5 @@
 kind: ExternalService
-name: hello-world
+name: simpleapp
 spec:
   image: ${IMAGE_URL}:${TAG}
   image_pull_policy: Always
@@ -9,7 +9,3 @@ spec:
       value: 1
     - name: API_KEY
       value: ${API_KEY}
-
-  domains:
-     - name: hello-world.my-company.com
-     - name: hw.my-company.com
