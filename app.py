@@ -1,4 +1,4 @@
-import os
+import os, requests
 import random
 from flask import Flask, flash, redirect, render_template, request, url_for
 
@@ -16,10 +16,8 @@ def view():
     revision = os.environ.get('K_REVISION', 'Unknown revision')
     num=random.randint(1,12)
     hitt= num*2
-    return render_template('index.html',num=num,hit=hitt,congmsg=congramessage,
-        message=message,
-        Service=service,
-        Revision=revision)
+    return render_template('index.html',num=num,hit=hitt,congmsg=congramessage,Service=service,Revision=revision,message=message)
+
 
 @app.route("/indexx")
 def indexx():
