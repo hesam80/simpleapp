@@ -1,3 +1,6 @@
+stages:  
+ - push
+ - deploy
 push:  
     stage: push  
     image: docker:latest  
@@ -7,8 +10,7 @@ push:
         - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY  
         - docker build --pull -t $IMAGE_URL:$TAG .  
         - docker push $IMAGE_URL:$TAG  
-  only:  
-        - develop
+
 
 deploy:  
     stage: deploy  
@@ -17,7 +19,5 @@ deploy:
         COLLECT_ERROR: 1  
     script:  
         - pip install fandogh_cli --upgrade  
-        - fandogh login --username $FAN_USR --password $FAN_PASS  
-        - ./deployment/scripts/deploy-to-fandogh.sh 
-    only:  
-  - develop
+        - fandogh login --username hesam80 --password sa13801380  
+        - deploy-to-fandogh.sh 

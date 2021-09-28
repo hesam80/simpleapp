@@ -1,6 +1,6 @@
 #!/bin/bash
 fandogh service apply \
- -f ../fandogh-manifests/service-manifest.yaml \
+ -f ./simpleapp-manifest.yml \
  -p IMAGE_URL \
  -p TAG \
  -p SEC_NAME \
