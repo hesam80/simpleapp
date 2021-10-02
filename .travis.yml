@@ -7,6 +7,8 @@ cache: yarn
 # command to install dependencies
 install:
   - pip install fandogh-cli --upgrade
+  - pip install docker
+  
 # command to run tests
 script:
   - echo $TRAVIS_COMMIT
