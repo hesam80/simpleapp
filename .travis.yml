@@ -12,7 +12,7 @@ install:
 # command to run tests
 script:
   - echo $TRAVIS_COMMIT
-  - fandogh login --username=hesam80 --password=sa13801380
-  - echo "yes"
+  - docker login --username=hesam80 --password=sa13801380
+  - docker build -t simpleapp:latset .
   - fandogh image publish --version=$TRAVIS_COMMIT || travis_terminate 1
   - fandogh service deploy -p 8000 --version=$TRAVIS_COMMIT --name=simpleapp -e RECAPTCHA_SITE_KEY=$RECAPTCHA_SITE_KEY -e RECAPTCHA_SECRET_KEY=$RECAPTCHA_SECRET_KEY  -e SECRET_KEY=$SECRET_KEY || travis_terminate 1
