@@ -1,0 +1,11 @@
+kind: ExternalService
+name: simpleapps
+spec:
+  allow_http: true
+  image: 'simpleapps:1.0.1'
+  image_pull_policy: IfNotPresent
+  path: /
+  port: 5000
+  replicas: 1
+  resources:
+    memory: 200Mi
