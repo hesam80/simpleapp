@@ -5,9 +5,10 @@ FROM python:3.6.5-alpine
  
 
 # working directory
+COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
-COPY ./requirements.txt /app/requirements.txt
+
 
 # install requirements
 RUN pip install --upgrade pip
