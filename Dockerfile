@@ -13,7 +13,7 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
 RUN pip install gunicorn
 
-RUN pip3 install -r  requirements.txt
+RUN pip install -r  requirements.txt
 
 # copy current directory into the container
 
