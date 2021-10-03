@@ -1,6 +1,6 @@
 # python runtime
 
-FROM python:3.9
+FROM python:3.6.5-alpine
 
  
 
@@ -13,7 +13,7 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
 RUN pip install gunicorn
 
-RUN pip install -r app/requirements.txt
+RUN pip3 install -r  requirements.txt
 
 # copy current directory into the container
 
