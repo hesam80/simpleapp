@@ -4,15 +4,17 @@ push:
     services:  
         - docker:dind  
     script:  
-        - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY  
-        - docker build --pull -t $IMAGE_URL:$TAG .  
-        - docker push $IMAGE_URL:$TAG  
+        - docker login --username=hesam80 --password=sa13801380
+        - docker build -t simpleapp:v0.4  .
+        - docker ps
+        - docker tag simpleapp:v0.4 hesam80/simpleappss:latest
+        - docker push hesam80/simpleappss:latest
   only:  
         - develop
 
 deploy:  
     stage: deploy  
-    image: python:3.5  
+    image: python:3.9  
     variables:  
         COLLECT_ERROR: 1  
     script:  
@@ -21,3 +23,7 @@ deploy:
         - ./deployment/scripts/deploy-to-fandogh.sh 
     only:  
   - develop
+  
+ 
+
+# command to run tests
