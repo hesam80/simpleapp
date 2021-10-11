@@ -15,6 +15,6 @@ script:
   - docker login --username=hesam80 --password=sa13801380
   - docker build -t simpleapp:v0.4  .
   - docker ps
-  - docker tag simpleapp:v0.4 hesam80/simpleappss:latest
-  - docker push hesam80/simpleappss:latest
+  - docker tag simpleapp:v0.4 hesam80/simpleapp:latest
+  - docker push hesam80/simpleapp:latest
   
