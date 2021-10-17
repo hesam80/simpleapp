@@ -33,7 +33,7 @@ def success():
   height=request.form["tool"]
   vazn = request.form["arz"]
   num=random.randint(1,12)
-  return render_template('success.html', hit=height , number=num , vazn=vazn , version = version) 
+  return render_template('success.html', hit=height , number=num , vazn=vazn ) 
  
 @app.route('/resultst')
 def resultst():

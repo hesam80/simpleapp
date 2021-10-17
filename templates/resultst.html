@@ -12,9 +12,8 @@
 	<li><a href="{{url_for('success')}}" target="_blank">goto success</a></li>
 	<li><a href="{{url_for('resultst')}}" target="_blank">goto resultst</a></li>
 	<h3>in addad random tolid mishavad</h3>
-	<button autofocus="autofocus" onclick="location.href='{{url_for('resultst')}}'">click to generate random number</button>
 	<input type="text" name="number" value="{{number}}">
-	<input type=button onClick="location.href='{{url_for('resultst')}}'" value='click here'>
+	
 {% endblock %}
 <ul id="navigation">
     {% for item in navigation %}
