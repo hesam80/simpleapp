@@ -2,8 +2,9 @@ kind: ExternalService
 name: simpleapp
 spec:
   allow_http: true
-  image: 'simpleapp:1.5'
-  image_pull_policy: IfNotPresent
+  image: hesam80/simpleapp:latest
+  image_pull_policy: Always
+  image_pull_secret: dockerhub
   path: /
   port: 80
   replicas: 1
