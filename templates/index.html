@@ -8,10 +8,10 @@
 <link href="/static/cloud-run-32-color.png" rel="icon" type="image/png" />
 <link href="/static/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
-const click= document.querySelector('[click-here]')
+let click= document.querySelector(['click-here'])
 click.addEventListener('click', button=>{
-	
-	location.href='/templates/index.html';
+	window.open('indexx.html');
+	alert("hello");
 	})
 </script>
 </head>
@@ -44,7 +44,7 @@ click.addEventListener('click', button=>{
                     <li><p>arz ra vared konid</p><input type="text" name="arz" value=""></li>
                     <li><input type="submit" value="submit"></li>
                 </form>
-                <button clsas="click-here" name="click-here">log in</button>
+                <button name='datadelete' onclick="window.open('indexx.html');">DEL</button>
 			</div>
 		</div>
 
