@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def view():
     """Return a friendly HTTP greeting."""
-    message = "It's redeployedd Wow how it's Beautiful! thanks you so much"
+    message = "It's redeployedd Wow how it's Beautiful! thanks you so much so on"
     congramessage="Congratulations, you successfully deployed a container image to Cloud Run!"
     """Get Cloud Run environment variables."""
     service = os.environ.get('K_SERVICE', 'Unknown service')
