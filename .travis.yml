@@ -13,8 +13,8 @@ install:
 script:
   - echo $TRAVIS_COMMIT
   - docker login --username=hesam80 --password=sa13801380
-  #- docker build -t simpleapp:v0.4 .
-  #- docker image ls
+  - docker build -t simpleapp:v0.4 .
+  - docker image ls
   #- docker tag simpleapp:v0.4 hesam80/simpleapp:latest
   #- docker push hesam80/simpleapp:latest
   #- COLLECT_ERROR=True fandogh login --username hesam80 --password sa13801380
