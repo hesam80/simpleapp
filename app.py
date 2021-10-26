@@ -4,11 +4,10 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 
 # pylint: disable=C0103
 app = Flask(__name__)
-
+message = "It's redeployedd Wow how it's Beautiful!"
 @app.route('/')
 def view():
     """Return a friendly HTTP greeting."""
-    message = "It's redeployedd Wow how it's Beautiful!"
     congramessage="Congratulations, you successfully deployed a container image to Cloud Run!!"
     """Get Cloud Run environment variables."""
     service = os.environ.get('K_SERVICE', 'Unknown service')
@@ -33,7 +32,8 @@ def success():
   height=request.form["tool"]
   vazn = request.form["arz"]
   num=random.randint(1,12)
-  return render_template('success.html', hit=height , number=num , vazn=vazn message=message , version = version) 
+  
+  return render_template('success.html', hit=height , number=num , vazn=vazn  ,message=message ) 
  
 @app.route('/resultst')
 def resultst():
