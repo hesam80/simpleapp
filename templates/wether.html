@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}weather{% endblock %}
+{% block content %}
+
+			<div class="message">
+                
+                
+                 
+                    <h1>Weather in a City</h1><form class="form-inline" method="POST" action="{{ url_for('result') }}">
+                       <div class="select">
+                        <select name="comp_select" class="selectpicker form-control">
+                        {% for o in data %}
+                         <option value="{{ o.name }}">{{ o.name }}</option>
+                        {% endfor %}
+                        </select>
+                       </div>
+                        <button type="submit" class="btn">Go</button>
+                    </form>
