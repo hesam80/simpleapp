@@ -6,12 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template(
-        'weather.html',
-        data=[{'name':'Toronto'}, {'name':'Montreal'}, {'name':'Calgary'},
-        {'name':'Ottawa'}, {'name':'Edmonton'}, {'name':'Mississauga'},
-        {'name':'Winnipeg'}, {'name':'Vancouver'}, {'name':'Brampton'}, 
-        {'name':'tehran'}])
+    return render_template('weather.html',data=[{'name': 'Tehran'},{'name':'kerman'},{'name':'Shiraz'}])
         
 @app.route("/result" , methods=['GET', 'POST'])
 def result():
