@@ -4,10 +4,12 @@
 {% block title %}result{%endblock %}
 
 {% block content %}
+<h1>Weather</h1>
 {% for d in data %}
   
- <h1>Weather</h1>
- <h1>{{ d['name'] }}, {{ d['sys']['country'] }}</h1>
+
+ <h1>{{ d['sys']['name'] }}</h1>,<h1> {{ d['sys']['country'] }}</h1>
     <h1>{{ d['main']['temp']|round|int}} °C</h1>
+    <h1>{{ d['weather']['description']}}</h1>
 {% endfor %}
 {% endblock %}
