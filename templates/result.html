@@ -6,10 +6,11 @@
 {% block content %}
 <h1>Weather</h1>
 {% for d in data %}
-  
-
- <h1>{{ d['sys']['name'] }}</h1>,<h1> {{ d['sys']['country'] }}</h1>
-    <h1>{{ d['main']['temp']|round|int}} °C</h1>
-    <h1>{{ d['weather']['description']}}</h1>
-{% endfor %}
+   <h1>{{ d }}</h1>
+   <
+   <h1>temp in  {{ d['main']['temp']|round|int}} °C</h1>
+   <h1>the wheather is : {{ d['weather']['description']}} is :</h1>
+   <h2>wind speed is : {{ d['wind']['speed']}} </h2>
+    
+{%endfor %}
 {% endblock %}

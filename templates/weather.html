@@ -6,7 +6,8 @@
                 
                 
                  
-                    <h1>Weather in a City</h1><form class="form-inline" method="GET" action="{{ url_for('result') }}">
+                    <h1>Weather in a City</h1>
+                    <form class="form-inline" method="GET" action="{{ url_for('result') }}">
                        <div class="select">
                         <select name="comp_select" class="selectpicker form-control">
                         {% for o in data %}
