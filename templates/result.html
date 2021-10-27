@@ -9,7 +9,7 @@
    <h1>{{ d }}</h1>
    
    <h1>temp in  {{ d['main']['temp']|round|int}} °C</h1>
-   <h1>the wheather is : {{ d['weather']['description']}} is :</h1>
+   <h1>the wheather is : {{ d['weather'] }}</h1>
    <h2>wind speed is : {{ d['wind']['speed']}} </h2>
     
 {%endfor %}
