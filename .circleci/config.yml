@@ -3,10 +3,16 @@ jobs:
   build:
     docker:
       - image: python:3.7
+      - cache: yarn
     steps:
       - run:
           name: The First Step
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+            pip install pip --upgrade
+            pip install fandogh-cli --upgrade
+            pip install docker
+            docker login --username=hesam80 --password=sa13801380
+            docker build -t flaskapp:v0.0  .
 
