@@ -3,6 +3,7 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 from weather import query_api
 
 app = Flask(__name__)
+message = "It's redeployedd Wow how it's Beautiful!"
 
 @app.route('/')
 def index():
