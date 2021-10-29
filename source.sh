@@ -1,5 +1,5 @@
-#!/bin/bash
-echo hello
-read names
-echo ${reply}
-echo "source venv/bin/activate"
+#!/bin/sh
+#echo hello
+#read names
+#echo ${reply}
+run "source venv/bin/activate"

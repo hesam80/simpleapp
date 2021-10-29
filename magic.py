@@ -4,10 +4,10 @@ from weather import query_api
 
 app = Flask(__name__)
 message = "It's redeployedd Wow how it's Beautiful!"
-
+congramessage="Congratulations, you successfully deployed a container image to Cloud Run!!"
 @app.route('/')
 def index():
-    return render_template('weather.html',data=[{'name': 'Tehran'},{'name':'kerman'},{'name':'Shiraz'}])
+    return render_template('weather.html',congmsg=congramessage,message=message,data=[{'name': 'Tehran'},{'name':'kerman'},{'name':'Shiraz'}])
         
 @app.route("/result" , methods=['GET', 'POST'])
 def result():
