@@ -11,4 +11,4 @@ COPY . /app
 
 ENTRYPOINT [ "python" ]
 
-CMD [ "magic.py" ]
+CMD [ "app.py" ]
