@@ -13,6 +13,5 @@ jobs:
             pip install pip --upgrade
             pip install fandogh-cli --upgrade
             pip install docker
-            docker login --username=hesam80 --password=sa13801380
-            docker build -t flaskapp:v0.0  .
+
 
