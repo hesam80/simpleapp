@@ -10,19 +10,4 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
-            pip install pip --upgrade
-            pip install fandogh-cli --upgrade
-            pip install docker
-            docker-build:
-  # Use the official docker image.
-  image: docker:latest
-  stage: build
-  services:
-    - docker:dind
-  before_script:
-    - docker login -u "hesam80" -p "sa13801380"
-  # Default branch leaves tag empty (= latest tag)
-  # All other branches are tagged with the escaped branch name (commit ref slug)
-  script:
-    - docker build  -t weatherapp:latest .
 
