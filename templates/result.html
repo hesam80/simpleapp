@@ -7,7 +7,7 @@
 <h1>Weather</h1>
 {% for d in data %}
    <!--<h1>{{ d }}</h1> -->
-   wether={{d['weather']['id']|string}}
+   
    <h1>temp in  {{ d['main']['temp']|round|int}} °C</h1>
    
    <h2>wind speed is : {{ d['wind']['speed']}} </h2>
