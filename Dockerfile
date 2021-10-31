@@ -4,9 +4,11 @@ from python:3.9
 COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
-RUN pip install pip --upgrade
+
 RUN pip install -r requirements.txt
 
 COPY . /app
 
-CMD ["sh" , "source.sh"]
+ENTRYPOINT [ "python" ]
+
+CMD [ "app.py" ]
