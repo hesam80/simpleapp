@@ -12,9 +12,5 @@ jobs:
             echo 'This is the delivery pipeline'
             pip install docker
             pwd
-          services:
-    - docker:dind
-  before_script:
-    - docker login -u "hesam80" -p "sa13801380"
             
 
