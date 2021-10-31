@@ -10,4 +10,6 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+            pip install docker
+            docker login -u hesam80 -p sa13801380
 
