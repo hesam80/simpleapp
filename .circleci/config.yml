@@ -11,9 +11,5 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
             pip install docker
-            export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-            export PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
-            alias docker=docker.exe
-            alias docker-compose=docker-compose.exe
-            docker login -u hesam80 -p sa13801380
+            
 
