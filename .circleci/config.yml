@@ -13,25 +13,12 @@ jobs:
             pip install pip --upgrade
             pip install fandogh-cli --upgrade
             pip install docker
-            docker-build:
-  # Use the official docker image.
-  image: docker:latest
-  stage: build
-  services:
-    - docker:dind
+
   before_script:
     - docker login -u "hesam80" -p "sa13801380"
   # Default branch leaves tag empty (= latest tag)
   # All other branches are tagged with the escaped branch name (commit ref slug)
   script:
-    - |
-      if [[ "$CI_COMMIT_BRANCH" == "new1" ]]; then
-        tag=""
-        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = 'latest'"
-      else
-        tag=":$CI_COMMIT_REF_SLUG"
-        echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
-      fi
     - docker build --pull -t "weatherapp:tag=$tag" .
     - docker tag  "weatherapp:tag=$tag" "hesam80/weatherapp:latest"
     - docker push hesam80/weatherapp:latest
