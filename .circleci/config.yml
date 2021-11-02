@@ -3,17 +3,5 @@ jobs:
   build:
     docker:
       - image: python:3.7
-      
-    steps:
-      - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-            pip install docker
-            python -m pip install --upgrade pip
-            pip install build
-            python -m build
-            pwd
             
 
